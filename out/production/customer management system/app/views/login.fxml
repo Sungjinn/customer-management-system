@@ -45,7 +45,7 @@
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </VBox.margin>
                            <children>
-                              <TextField promptText="ID" style="-fx-background-color: tramsparent;" HBox.hgrow="ALWAYS">
+                              <TextField fx:id="tf_id" promptText="ID" style="-fx-background-color: tramsparent;" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
@@ -54,7 +54,7 @@
                         </HBox>
                         <HBox alignment="TOP_RIGHT" maxWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: white; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
                            <children>
-                              <PasswordField promptText="password" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+                              <PasswordField fx:id="tf__password" promptText="password" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
@@ -64,7 +64,7 @@
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </VBox.margin>
                         </HBox>
-                        <Button maxWidth="-Infinity" mnemonicParsing="false" prefHeight="21.0" prefWidth="129.0" style="-fx-background-color: #ff3b49; -fx-background-radius: 100px; -fx-text-fill: white;" text="Login">
+                        <Button maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#login" prefHeight="21.0" prefWidth="129.0" style="-fx-background-color: #ff3b49; -fx-background-radius: 100px; -fx-text-fill: white;" text="Login">
                            <VBox.margin>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </VBox.margin>
