@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.DB.DbConnet;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,6 +15,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class CustomerListController implements Initializable {
@@ -56,6 +61,15 @@ public class CustomerListController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Connection connection = DbConnet.getInstance().getConnection();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from customer");
+            System.out.println("here : " + resultSet);
+            System.out.println("query : " + statement.executeQuery("select * from customer"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 }
