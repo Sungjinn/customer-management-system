@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="790c03d7-8849-4ebb-a5d0-985c48d25c8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/controllers/EditCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer-management.db" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/AddCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/AddCustomerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/CustomerListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/CustomerListController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/views/add_customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/views/add_customer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/views/customer_list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/views/customer_list.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/DB/DbConnet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/DB/DbConnet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/AddCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/AddCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/CustomerListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/CustomerListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/add_customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/edit_customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/add_customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/add_customer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/views/customer_list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/customer_list.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/login.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,11 +66,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/controllers/AddCustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1159">
-              <caret line="80" selection-start-line="80" selection-start-column="2" selection-end-line="97" selection-end-column="7" />
+            <state relative-caret-position="132">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -81,17 +78,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/controllers/CustomerListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
+            <state relative-caret-position="349">
+              <caret line="123" column="44" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/DB/DbConnet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+            <state relative-caret-position="159">
+              <caret line="30" column="69" lean-forward="true" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -114,8 +111,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="50" selection-end-column="29" />
+            <state relative-caret-position="957">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -125,7 +134,7 @@
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
-              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -167,14 +176,15 @@
         <option value="$PROJECT_DIR$/src/app/controllers/EditCustomerController.java" />
         <option value="$PROJECT_DIR$/src/app/views/edit_customer.fxml" />
         <option value="$PROJECT_DIR$/src/app/views/add_customer.fxml" />
-        <option value="$PROJECT_DIR$/src/app/controllers/AddCustomerController.java" />
         <option value="$PROJECT_DIR$/src/app/DB/DbHandler.java" />
-        <option value="$PROJECT_DIR$/src/app/controllers/CustomerListController.java" />
         <option value="$PROJECT_DIR$/src/app/DB/DbConnet.java" />
+        <option value="$PROJECT_DIR$/src/app/controllers/CustomerListController.java" />
+        <option value="$PROJECT_DIR$/src/app/controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/app/controllers/AddCustomerController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="611" />
     <option name="width" value="1318" />
     <option name="height" value="1074" />
@@ -244,7 +254,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../customer-management-system1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -308,18 +318,18 @@
       <workItem from="1592380480033" duration="8073000" />
       <workItem from="1592405512333" duration="9323000" />
       <workItem from="1592481223154" duration="4161000" />
-      <workItem from="1592486694424" duration="2082000" />
+      <workItem from="1592486694424" duration="8010000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6243000" />
+    <option name="totallyTimeSpent" value="12171000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -328,7 +338,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32293987" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32293987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -358,13 +368,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/edit_customer.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -377,13 +380,6 @@
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="50" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/customer_list.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
@@ -395,21 +391,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/add_customer.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/controllers/AddCustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="80" selection-start-line="80" selection-start-column="2" selection-end-line="97" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -430,17 +411,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/controllers/CustomerListController.java">
+    <entry file="file://$PROJECT_DIR$/src/app/DB/DbConnet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
+        <state relative-caret-position="159">
+          <caret line="30" column="69" lean-forward="true" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/DB/DbConnet.java">
+    <entry file="file://$PROJECT_DIR$/src/app/controllers/CustomerListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="349">
+          <caret line="123" column="44" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/add_customer.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/controllers/AddCustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>

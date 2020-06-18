@@ -131,6 +131,7 @@ public class CustomerListController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         oblist = FXCollections.observableArrayList();
 
         name.setCellValueFactory(new PropertyValueFactory<>("name"));

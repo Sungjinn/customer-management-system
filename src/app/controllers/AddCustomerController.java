@@ -6,7 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 
 import java.io.IOException;
@@ -15,10 +14,7 @@ import java.net.URL;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
 
-import java.time.format.DateTimeFormatter;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 
@@ -76,6 +72,25 @@ public class AddCustomerController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void cancel(MouseEvent event) {
+        nameTextField.setText("");
+        companyNameField.setText("");
+        addressTextField.setText("");
+        cardNumberField.setText("");
+        cardValidityField.setText("");
+        memoField.setText("");
+        performanceField.setText("");
+        dobPicker.setValue(null);
+        contractDayPicker.setValue(null);
+        contractPeriodPicker.setValue(null);
+    }
+
+    @FXML
+    void save(MouseEvent event) {
+
     }
 
 //    private void dayFormatting(DatePicker datePicker) {
