@@ -1,13 +1,12 @@
 package app.DB;
 
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import app.models.Customer;
+
+import java.sql.*;
 
 public class DbConnet {
 
-    private DbConnet() {
+    public DbConnet() {
 
     }
 
@@ -27,5 +26,20 @@ public class DbConnet {
             e.printStackTrace();
         }
         return connection;
+    }
+    public boolean deleteCustomer(Customer customer){
+        String deleteStatement = "DELETE FROM customer WHERE 상호 = ?";
+        try {
+            PreparedStatement stmt = getConnection().prepareStatement(deleteStatement);
+            stmt.setString(1,customer.getCompanyName());
+            int result = stmt.executeUpdate();
+            if (result == 1){
+                return true;
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

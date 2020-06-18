@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.EditCustomerController">
+    <children>
+        <Label layoutX="40.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="이름:" />
+        <TextField fx:id="nameTextField" layoutX="178.0" layoutY="125.0" prefHeight="25.0" prefWidth="242.0" />
+        <Label layoutX="40.0" layoutY="171.0" prefHeight="23.0" prefWidth="138.0" text="상호:" />
+        <TextField fx:id="companyNameField" layoutX="178.0" layoutY="170.0" prefHeight="25.0" prefWidth="242.0" />
+        <Label layoutX="40.0" layoutY="218.0" prefHeight="23.0" prefWidth="138.0" text="주소:" />
+        <TextField fx:id="addressTextField" layoutX="178.0" layoutY="217.0" prefHeight="25.0" prefWidth="242.0" />
+        <Label layoutX="40.0" layoutY="266.0" prefHeight="23.0" prefWidth="138.0" text="생년월일:" />
+        <Label layoutX="486.0" layoutY="314.0" prefHeight="23.0" prefWidth="138.0" text="메모:" />
+        <TextField fx:id="memoField" layoutX="624.0" layoutY="310.0" prefHeight="81.0" prefWidth="242.0" />
+        <Label layoutX="40.0" layoutY="312.0" prefHeight="23.0" prefWidth="138.0" text="진행카테고리:" />
+        <Label layoutX="486.0" layoutY="126.0" prefHeight="23.0" prefWidth="138.0" text="카드번호:" />
+        <TextField fx:id="cardNumberField" layoutX="624.0" layoutY="125.0" prefHeight="25.0" prefWidth="242.0" />
+        <Label layoutX="486.0" layoutY="171.0" prefHeight="23.0" prefWidth="138.0" text="카드유효번호:" />
+        <TextField fx:id="cardValidityField" layoutX="624.0" layoutY="170.0" prefHeight="25.0" prefWidth="242.0" />
+        <Label layoutX="486.0" layoutY="218.0" prefHeight="23.0" prefWidth="138.0" text="계약날짜:" />
+        <Label layoutX="486.0" layoutY="266.0" prefHeight="23.0" prefWidth="138.0" text="약정:" />
+        <Button fx:id="addCustomerButton" layoutX="423.0" layoutY="491.0" style="-fx-background-color: #ff3b41;" text="등록" textFill="WHITE">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Button>
+        <Pane prefHeight="94.0" prefWidth="900.0" style="-fx-background-color: #ff3b41;">
+            <children>
+                <Text fill="WHITE" layoutX="359.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="고객 추가">
+                    <font>
+                        <Font name="BebasNeue" size="50.0" />
+                    </font>
+                </Text>
+                <Button id="button" fx:id="homeButton" layoutX="30.0" layoutY="28.0" prefHeight="45.0" prefWidth="51.0" text="홈">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <TextField fx:id="performanceField" layoutX="178.0" layoutY="316.0" prefHeight="25.0" prefWidth="242.0" />
+        <DatePicker fx:id="dobPicker" layoutX="178.0" layoutY="265.0" prefHeight="27.0" prefWidth="239.0" />
+        <DatePicker fx:id="contractDayPicker" layoutX="624.0" layoutY="216.0" prefHeight="27.0" prefWidth="242.0" />
+        <DatePicker fx:id="contractPeriodPicker" layoutX="624.0" layoutY="265.0" prefHeight="27.0" prefWidth="242.0" />
+    </children>
+
+</AnchorPane>
