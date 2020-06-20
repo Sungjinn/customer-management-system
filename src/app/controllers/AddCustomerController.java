@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.DB.DbConnet;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +16,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 
@@ -90,7 +94,20 @@ public class AddCustomerController implements Initializable {
 
     @FXML
     void save(MouseEvent event) {
+        Connection connection = DbConnet.getInstance().getConnection();
+        try {
+            String name = nameTextField.getText(), comName = companyNameField.getText(), address = addressTextField.getText(), cardNumber = cardNumberField.getText(),
+                    cardValidity = cardValidityField.getText(), memo = memoField.getText(), performance = performanceField.getText(), DOB = dobPicker.getValue().toString(),
+                    contractDay = contractDayPicker.getValue().toString(), contractPeriod = contractPeriodPicker.getValue().toString();
 
+            Statement statement = connection.createStatement();
+            int status = statement.executeUpdate("INSERT INTO customer()" + "VALUES ('"+name+"','"+comName+"')");
+            if(status > 0){
+                System.out.println("error");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 //    private void dayFormatting(DatePicker datePicker) {

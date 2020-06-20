@@ -148,7 +148,7 @@ public class CustomerListController implements Initializable {
         try {
             Connection connection = DbConnet.getInstance().getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT  * FROM customer");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM customer");
 
             while (resultSet.next()) {
                 oblist.add(new Customer(resultSet.getString("이름"), resultSet.getString("상호"), resultSet.getString("주소"),
