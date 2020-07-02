@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 
 import java.io.IOException;
@@ -15,10 +17,14 @@ import java.net.URL;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -79,60 +85,71 @@ public class AddCustomerController implements Initializable {
     }
 
     @FXML
-    void cancel(MouseEvent event) {
-        nameTextField.setText("");
-        companyNameField.setText("");
-        addressTextField.setText("");
-        cardNumberField.setText("");
-        cardValidityField.setText("");
-        memoField.setText("");
-        performanceField.setText("");
-        dobPicker.setValue(null);
-        contractDayPicker.setValue(null);
-        contractPeriodPicker.setValue(null);
-    }
-
-    @FXML
     void save(MouseEvent event) {
         Connection connection = DbConnet.getInstance().getConnection();
-        try {
-            String name = nameTextField.getText(), comName = companyNameField.getText(), address = addressTextField.getText(), cardNumber = cardNumberField.getText(),
-                    cardValidity = cardValidityField.getText(), memo = memoField.getText(), performance = performanceField.getText(), DOB = dobPicker.getValue().toString(),
-                    contractDay = contractDayPicker.getValue().toString(), contractPeriod = contractPeriodPicker.getValue().toString();
+        if (dobPicker.getValue() == null || contractDayPicker.getValue() == null || contractPeriodPicker.getValue() == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("고객 정보 추가하기");
+            alert.setContentText("고객의 생년월일, 계약날짜, 약정 날짜를 선택해주세요.");
+            alert.show();
+        } else {
+            String name = nameTextField.getText(), companyName = companyNameField.getText(), address = addressTextField.getText(), DOB = dobPicker.getValue().toString(), cardNumber = cardNumberField.getText(),
+                    cardValidity = cardValidityField.getText(), contractDay = contractDayPicker.getValue().toString(), contractPeriod = contractPeriodPicker.getValue().toString(), performance = performanceField.getText(),
+                    memo = memoField.getText();
 
-            Statement statement = connection.createStatement();
-            int status = statement.executeUpdate("INSERT INTO customer()" + "VALUES ('"+name+"','"+comName+"')");
-            if(status > 0){
-                System.out.println("error");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("고객 정보 추가하기");
+            alert.setContentText("이름 : " + name + "\n" + "상호 : " + companyName + "\n" + "위에 고객 정보를 추가하시겠습니까?");
+            Optional<ButtonType> answer = alert.showAndWait();
+            if (answer.get() == ButtonType.OK) {
+                try {
+                    Statement statement = connection.createStatement();
+                    statement.execute("INSERT into customer (이름,상호,주소,생년월일,카드번호,카드유효번호,계약날짜,약정,진행카테고리,메모) values ('" + name + "','" + companyName + "','" + address +
+                            "','" + DOB + "','" + cardNumber + "','" + cardValidity + "','" + contractDay + "','" +
+                            contractPeriod + "','" + performance + "','" + memo + "')");
+
+                    nameTextField.setText("");
+                    companyNameField.setText("");
+                    addressTextField.setText("");
+                    cardNumberField.setText("");
+                    cardValidityField.setText("");
+                    memoField.setText("");
+                    performanceField.setText("");
+                    dobPicker.setValue(null);
+                    contractDayPicker.setValue(null);
+                    contractPeriodPicker.setValue(null);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
-//    private void dayFormatting(DatePicker datePicker) {
-//        datePicker.setConverter(
-//                new StringConverter<>() {
-//                    final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//
-//                    @Override
-//                    public String toString(LocalDate date) {
-//                        return (date != null) ? dateFormatter.format(date) : "";
-//                    }
-//
-//                    @Override
-//                    public LocalDate fromString(String string) {
-//                        return (string != null && !string.isEmpty())
-//                                ? LocalDate.parse(string, dateFormatter)
-//                                : null;
-//                    }
-//                });
-//    }
+
+    private void dayFormatting(DatePicker datePicker) {
+        datePicker.setConverter(
+                new StringConverter<LocalDate>() {
+                    final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+                    @Override
+                    public String toString(LocalDate date) {
+                        return (date != null) ? dateFormatter.format(date) : " ";
+                    }
+
+                    @Override
+                    public LocalDate fromString(String string) {
+                        return (string != null && !string.isEmpty())
+                                ? LocalDate.parse(string, dateFormatter)
+                                : null;
+                    }
+                });
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        dayFormatting(dobPicker);
-//        dayFormatting(contractDayPicker);
-//        dayFormatting(contractPeriodPicker);
+        dayFormatting(dobPicker);
+        dayFormatting(contractDayPicker);
+        dayFormatting(contractPeriodPicker);
+
     }
 }

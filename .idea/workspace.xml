@@ -2,17 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="790c03d7-8849-4ebb-a5d0-985c48d25c8c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b60af28-7f86-4c97-af80-b4c80515a711.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b60af28-7f86-4c97-af80-b4c80515a711.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02e5bdcd-be1d-430a-b095-6e1297c9b981.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/02e5bdcd-be1d-430a-b095-6e1297c9b981.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b60af28-7f86-4c97-af80-b4c80515a711.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/74131f22-b596-4dc4-8c7c-06add1b65e1f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a61e4b7-6333-4182-b45c-8fe96a1c4e5c.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer-management.db" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/DB/DbConnet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/DB/DbConnet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/AddCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/AddCustomerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/CustomerListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/CustomerListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/customer-management.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/EditCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/controllers/EditCustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/models/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/views/add_customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/views/add_customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/views/customer_list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/views/customer_list.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/customer-management-system/app/views/edit_customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/customer-management-system/app/views/edit_customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/DB/DbConnet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/DB/DbConnet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/AddCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/AddCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/CustomerListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/CustomerListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/customer-management.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/controllers/EditCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/EditCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/add_customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/add_customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/customer_list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/customer_list.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/edit_customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/edit_customer.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,13 +58,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="customer-management" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="customer: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -65,38 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/controllers/AddCustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/controllers/CustomerListController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2211">
-              <caret line="162" column="5" lean-forward="true" selection-start-line="162" selection-start-column="5" selection-end-line="162" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/DB/DbConnet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+            <state relative-caret-position="589">
+              <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,47 +81,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="das://02e5bdcd-be1d-430a-b095-6e1297c9b981/schema/main/table/customer">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="57bd950f-38ce-4540-b69a-c6b6897da32d">
-              <filtering>
-                <filter text="" />
-              </filtering>
-              <column-attributes>
-                <column name="rowid" enabled="false" position="-1" />
-              </column-attributes>
+            <state projectRestartId="819d0d94-5d26-4a67-a23b-61eb0fb45320">
+              <filtering />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/views/add_customer.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/views/customer_list.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/controllers/EditCustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="24" selection-start-column="24" selection-end-column="24" />
+            <state relative-caret-position="-1285">
+              <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/controllers/CustomerListController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,21 +121,30 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>prepare</find>
+      <find>pre</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/controllers/EditCustomerController.java" />
-        <option value="$PROJECT_DIR$/src/app/views/edit_customer.fxml" />
         <option value="$PROJECT_DIR$/src/app/views/add_customer.fxml" />
         <option value="$PROJECT_DIR$/src/app/DB/DbHandler.java" />
-        <option value="$PROJECT_DIR$/src/app/DB/DbConnet.java" />
         <option value="$PROJECT_DIR$/src/app/controllers/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/app/controllers/AddCustomerController.java" />
-        <option value="$PROJECT_DIR$/src/app/controllers/CustomerListController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/74131f22-b596-4dc4-8c7c-06add1b65e1f/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/app/models/Customer.java" />
+        <option value="$PROJECT_DIR$/src/app/views/edit_customer.fxml" />
+        <option value="$PROJECT_DIR$/src/app/controllers/AddCustomerController.java" />
+        <option value="$PROJECT_DIR$/src/app/DB/DbConnet.java" />
+        <option value="$PROJECT_DIR$/src/app/views/customer_list.fxml" />
+        <option value="$PROJECT_DIR$/src/app/controllers/CustomerListController.java" />
+        <option value="$PROJECT_DIR$/src/app/controllers/EditCustomerController.java" />
       </list>
     </option>
   </component>
@@ -194,6 +159,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,11 +178,38 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="customer-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-management-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-management-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-management-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-management-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -236,11 +229,11 @@
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Sungjin Kim\Desktop\customer-management-system" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sungjin Kim\Desktop\customer-management-system\src\app" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sungjin Kim\Desktop\customer-management-system" />
       <recent name="C:\Users\Sungjin Kim\Desktop\customer-management-system\src\app" />
     </key>
   </component>
@@ -291,28 +284,35 @@
       <workItem from="1592405512333" duration="9323000" />
       <workItem from="1592481223154" duration="4161000" />
       <workItem from="1592486694424" duration="8230000" />
-      <workItem from="1592638835341" duration="2187000" />
+      <workItem from="1592638835341" duration="2430000" />
+      <workItem from="1593078555632" duration="9479000" />
+      <workItem from="1593245610215" duration="2507000" />
+      <workItem from="1593260760889" duration="3092000" />
+      <workItem from="1593327845645" duration="6342000" />
+      <workItem from="1593337381694" duration="1583000" />
+      <workItem from="1593592363492" duration="16585000" />
+      <workItem from="1593669477548" duration="2509000" />
+      <workItem from="1593699148192" duration="3971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14578000" />
+    <option name="totallyTimeSpent" value="60889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" weight="0.32962137" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32293987" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32293987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -322,12 +322,13 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" weight="0.32962137" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286026" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32850778" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32962137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="4" weight="0.26332623" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
@@ -342,33 +343,24 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/views/edit_customer.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="178" selection-start-line="11" selection-start-column="178" selection-end-line="11" selection-end-column="178" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/DB/DbHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/app/models/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/login.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Main.java">
+    <entry file="das://5b60af28-7f86-4c97-af80-b4c80515a711/schema/main/table/customer" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/74131f22-b596-4dc4-8c7c-06add1b65e1f/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://74131f22-b596-4dc4-8c7c-06add1b65e1f/schema/main/table/customer" />
+    <entry file="file://$PROJECT_DIR$/src/app/controllers/TitleBarController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+    <entry file="das://02e5bdcd-be1d-430a-b095-6e1297c9b981/schema/main/table/customer_dg_tmp" />
     <entry file="file://$PROJECT_DIR$/src/app/views/add_customer.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -377,54 +369,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/customer_list.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/controllers/EditCustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/DB/DbConnet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://5b60af28-7f86-4c97-af80-b4c80515a711/schema/main/table/customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="57bd950f-38ce-4540-b69a-c6b6897da32d">
-          <filtering>
-            <filter text="" />
-          </filtering>
-          <column-attributes>
-            <column name="rowid" enabled="false" position="-1" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/74131f22-b596-4dc4-8c7c-06add1b65e1f/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://74131f22-b596-4dc4-8c7c-06add1b65e1f/schema/main/table/customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="57bd950f-38ce-4540-b69a-c6b6897da32d">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
+        <state relative-caret-position="194">
           <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -432,10 +379,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/edit_customer.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/models/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/DB/DbConnet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding>
+            <element signature="method#getConnection#0;class#DbConnet#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/controllers/AddCustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        <state relative-caret-position="589">
+          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -444,20 +436,36 @@
     </entry>
     <entry file="das://02e5bdcd-be1d-430a-b095-6e1297c9b981/schema/main/table/customer">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="57bd950f-38ce-4540-b69a-c6b6897da32d">
-          <filtering>
-            <filter text="" />
-          </filtering>
-          <column-attributes>
-            <column name="rowid" enabled="false" position="-1" />
-          </column-attributes>
+        <state projectRestartId="819d0d94-5d26-4a67-a23b-61eb0fb45320">
+          <filtering />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/customer_list.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/controllers/EditCustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1285">
+          <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/controllers/CustomerListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2211">
-          <caret line="162" column="5" lean-forward="true" selection-start-line="162" selection-start-column="5" selection-end-line="162" selection-end-column="5" />
+        <state relative-caret-position="209">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

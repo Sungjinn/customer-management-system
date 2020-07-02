@@ -3,9 +3,10 @@ package app.models;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Customer {
-        String name,companyName,address,DOB,cardNumber,cardValidity,contractDay,contractPeriod,performance,note;
+        String id, name,companyName,address,DOB,cardNumber,cardValidity,contractDay,contractPeriod,performance,note;
 
-    public Customer(String name, String companyName, String address, String DOB, String cardNumber, String cardValidity, String contractDay, String contractPeriod, String performance, String note) {
+    public Customer(String id, String name, String companyName, String address, String DOB, String cardNumber, String cardValidity, String contractDay, String contractPeriod, String performance, String note) {
+        this.id = id;
         this.name = name;
         this.companyName = companyName;
         this.address = address;
@@ -16,6 +17,14 @@ public class Customer {
         this.contractPeriod = contractPeriod;
         this.performance = performance;
         this.note = note;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

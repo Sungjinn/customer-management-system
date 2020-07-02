@@ -4,6 +4,8 @@ import app.DB.DbConnet;
 import app.models.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,14 +13,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Region;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,7 +33,13 @@ import java.util.ResourceBundle;
 public class CustomerListController implements Initializable {
 
     @FXML
+    private TextField search;
+
+    @FXML
     private TableView<Customer> tbData;
+
+    @FXML
+    private TableColumn<Customer, String> id;
 
     @FXML
     private TableColumn<Customer, String> name;
@@ -44,7 +51,7 @@ public class CustomerListController implements Initializable {
     private TableColumn<Customer, String> address;
 
     @FXML
-    private TableColumn<Customer, String> BOD;
+    private TableColumn<Customer, String> DOB;
 
     @FXML
     private TableColumn<Customer, String> cardNumber;
@@ -64,6 +71,7 @@ public class CustomerListController implements Initializable {
     @FXML
     private TableColumn<Customer, String> note;
 
+    private ObservableList<Customer> oblist;
 
     @FXML
     void handleCustomerDeleteOption(ActionEvent event) {
@@ -94,13 +102,31 @@ public class CustomerListController implements Initializable {
 
     @FXML
     void handleCustomerEditOption(ActionEvent event) {
-        Customer selectedForDeletion = tbData.getSelectionModel().getSelectedItem();
-        if (selectedForDeletion == null) {
+        Customer selectedForEdition = tbData.getSelectionModel().getSelectedItem();
+        if (selectedForEdition == null) {
             Alert alert = new Alert(Alert.AlertType.NONE, "\n\n고객정보를 선택해주세요.", ButtonType.OK);
             alert.getDialogPane().setMinHeight(Region.USE_COMPUTED_SIZE);
             alert.show();
-        }
+        } else {
+            try {
+                Stage popup = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/views/edit_customer.fxml"));
+                Parent root = loader.load();
 
+                EditCustomerController editCustomerController = loader.getController();
+                editCustomerController.setData(selectedForEdition.getName(),selectedForEdition.getCompanyName(),selectedForEdition.getAddress(),selectedForEdition.getDOB(),
+                        selectedForEdition.getCardNumber(), selectedForEdition.getCardValidity(), selectedForEdition.getContractDay(), selectedForEdition.getContractPeriod(),
+                        selectedForEdition.getPerformance(), selectedForEdition.getNote(), selectedForEdition.getId());
+
+                popup.setScene(new Scene(root));
+                popup.initStyle(StageStyle.UTILITY);
+                popup.initModality(Modality.WINDOW_MODAL);
+                popup.show();
+            } catch (
+                    IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
@@ -127,17 +153,15 @@ public class CustomerListController implements Initializable {
         }
     }
 
-    private ObservableList<Customer> oblist;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         oblist = FXCollections.observableArrayList();
 
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         companyName.setCellValueFactory(new PropertyValueFactory<>("companyName"));
         address.setCellValueFactory(new PropertyValueFactory<>("address"));
-        BOD.setCellValueFactory(new PropertyValueFactory<>("DOB"));
+        DOB.setCellValueFactory(new PropertyValueFactory<>("DOB"));
         cardNumber.setCellValueFactory(new PropertyValueFactory<>("cardNumber"));
         cardValidity.setCellValueFactory(new PropertyValueFactory<>("cardValidity"));
         contractDay.setCellValueFactory(new PropertyValueFactory<>("contractDay"));
@@ -151,14 +175,37 @@ public class CustomerListController implements Initializable {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM customer");
 
             while (resultSet.next()) {
-                oblist.add(new Customer(resultSet.getString("이름"), resultSet.getString("상호"), resultSet.getString("주소"),
+                oblist.add(new Customer(resultSet.getString("id"), resultSet.getString("이름"), resultSet.getString("상호"), resultSet.getString("주소"),
                         resultSet.getString("생년월일"), resultSet.getString("카드번호"), resultSet.getString("카드유효번호"), resultSet.getString("계약날짜"),
                         resultSet.getString("약정"), resultSet.getString("진행카테고리"), resultSet.getString("메모")));
             }
             tbData.setItems(oblist);
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        search.setFocusTraversable(false);
+
+        FilteredList<Customer> filteredList = new FilteredList<>(oblist, ㄱ -> true);
+        search.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(customer -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (customer.getName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                } else if (customer.getCompanyName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                return false;
+            });
+        });
+
+        SortedList<Customer> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(tbData.comparatorProperty());
+        tbData.setItems(sortedList);
     }
 }

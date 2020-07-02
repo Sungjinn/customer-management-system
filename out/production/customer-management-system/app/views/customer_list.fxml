@@ -7,6 +7,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
@@ -27,14 +28,16 @@
                         <Font size="13.0" />
                     </font>
                 </Label>
+            <TextField fx:id="search" layoutX="965.0" layoutY="90.0" prefHeight="33.0" prefWidth="306.0" promptText="이름/상호" />
             </children>
         </Pane>
         <TableView fx:id="tbData" layoutX="171.0" layoutY="140.0" prefHeight="661.0" prefWidth="1119.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0">
             <columns>
+            <TableColumn fx:id="id" prefWidth="74.0" text="No." />
                 <TableColumn fx:id="name" prefWidth="74.0" text="이름" />
             <TableColumn fx:id="companyName" prefWidth="72.0" text="상호" />
                 <TableColumn fx:id="address" prefWidth="114.0" text="주소" />
-                <TableColumn fx:id="BOD" prefWidth="66.0" text="생년월일" />
+                <TableColumn fx:id="DOB" prefWidth="66.0" text="생년월일" />
             <TableColumn fx:id="cardNumber" prefWidth="75.0" text="카드번호" />
             <TableColumn fx:id="cardValidity" prefWidth="75.0" text="카드유효번호" />
             <TableColumn fx:id="contractDay" prefWidth="75.0" text="계약날짜" />
@@ -48,7 +51,7 @@
          <contextMenu>
             <ContextMenu>
               <items>
-                  <MenuItem mnemonicParsing="false" text="수정" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleCustomerEditOption" text="수정" />
                   <MenuItem mnemonicParsing="false" onAction="#handleCustomerDeleteOption" text="삭제" />
               </items>
             </ContextMenu>
