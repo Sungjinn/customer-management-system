@@ -17,7 +17,7 @@
          <children>
             <VBox alignment="BOTTOM_CENTER" prefHeight="425.0" prefWidth="162.0">
                <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#homeButtonInAdd" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #ff3b41 #ff3b41;" text="홈" textFill="WHITE">
+                  <Button mnemonicParsing="false" onMouseClicked="#homeButtonInAdd" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #50b8e7#50b8e7;" text="홈" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
@@ -25,7 +25,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#addCustomerButtonInAdd" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #ff3b41 #ff3b41;" text="고객 추가" textFill="WHITE">
+                  <Button mnemonicParsing="false" onMouseClicked="#addCustomerButtonInAdd" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #50b8e7;" text="고객 추가" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
@@ -37,40 +37,42 @@
             </VBox>
          </children>
       </StackPane>
-        <Pane prefHeight="139.0" prefWidth="1102.0" style="-fx-background-color: #ff3b41;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Pane prefHeight="139.0" prefWidth="1102.0" style="-fx-background-color: #50b8e7;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label layoutX="73.0" layoutY="30.0" text="고객리스트" textFill="WHITE">
+                <Label layoutX="73.0" layoutY="30.0" text="이본커뮤니케이션즈" textFill="WHITE">
                     <font>
                         <Font size="48.0" />
                     </font>
                 </Label>
-                <Label layoutX="79.0" layoutY="91.0" text="고객관리" textFill="WHITE">
+                <Label layoutX="79.0" layoutY="91.0" text="고객추가" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font>
                 </Label>
             </children>
         </Pane>
-      <Label layoutX="304.0" layoutY="228.0" prefHeight="23.0" prefWidth="138.0" text="이름:" />
-      <TextField fx:id="nameTextField" alignment="TOP_LEFT" layoutX="442.0" layoutY="227.0" prefHeight="25.0" prefWidth="242.0" />
-      <Label layoutX="304.0" layoutY="273.0" prefHeight="23.0" prefWidth="138.0" text="상호:" />
-      <TextField fx:id="companyNameField" alignment="TOP_LEFT" layoutX="442.0" layoutY="272.0" prefHeight="25.0" prefWidth="242.0" />
-      <Label layoutX="304.0" layoutY="320.0" prefHeight="23.0" prefWidth="138.0" text="주소:" />
-      <TextField fx:id="addressTextField" alignment="TOP_LEFT" layoutX="442.0" layoutY="319.0" prefHeight="25.0" prefWidth="242.0" />
-      <Label layoutX="304.0" layoutY="368.0" prefHeight="23.0" prefWidth="138.0" text="생년월일:" />
-      <Label layoutX="735.0" layoutY="413.0" prefHeight="23.0" prefWidth="138.0" text="메모:" />
-      <TextField fx:id="memoField" alignment="TOP_LEFT" layoutX="873.0" layoutY="413.0" prefHeight="261.0" prefWidth="305.0" />
-      <Label layoutX="304.0" layoutY="414.0" prefHeight="23.0" prefWidth="138.0" text="진행카테고리:" />
+      <Label layoutX="304.0" layoutY="230.0" prefHeight="23.0" prefWidth="138.0" text="이름:" />
+      <TextField fx:id="nameTextField" alignment="TOP_LEFT" layoutX="442.0" layoutY="230.0" prefHeight="25.0" prefWidth="242.0" />
+      <Label layoutX="304.0" layoutY="276.0" prefHeight="23.0" prefWidth="138.0" text="전화번호:" />
+      <TextField fx:id="phoneTextField" alignment="TOP_LEFT" layoutX="442.0" layoutY="275.0" prefHeight="25.0" prefWidth="242.0" />
+      <Label layoutX="304.0" layoutY="321.0" prefHeight="23.0" prefWidth="138.0" text="상호:" />
+      <TextField fx:id="companyNameField" alignment="TOP_LEFT" layoutX="442.0" layoutY="320.0" prefHeight="25.0" prefWidth="242.0" />
+      <Label layoutX="304.0" layoutY="368.0" prefHeight="23.0" prefWidth="138.0" text="주소:" />
+      <TextField fx:id="addressTextField" alignment="TOP_LEFT" layoutX="442.0" layoutY="367.0" prefHeight="25.0" prefWidth="242.0" />
+      <Label layoutX="304.0" layoutY="416.0" prefHeight="23.0" prefWidth="138.0" text="생년월일:" />
+      <DatePicker fx:id="dobPicker" layoutX="442.0" layoutY="415.0" prefHeight="27.0" prefWidth="239.0" />
       <Label layoutX="735.0" layoutY="225.0" prefHeight="23.0" prefWidth="138.0" text="카드번호:" />
       <TextField fx:id="cardNumberField" alignment="TOP_LEFT" layoutX="873.0" layoutY="224.0" prefHeight="25.0" prefWidth="242.0" />
       <Label layoutX="735.0" layoutY="270.0" prefHeight="23.0" prefWidth="138.0" text="카드유효번호:" />
       <TextField fx:id="cardValidityField" alignment="TOP_LEFT" layoutX="873.0" layoutY="269.0" prefHeight="25.0" prefWidth="242.0" />
       <Label layoutX="735.0" layoutY="317.0" prefHeight="23.0" prefWidth="138.0" text="계약날짜:" />
-      <Label layoutX="735.0" layoutY="365.0" prefHeight="23.0" prefWidth="138.0" text="약정:" />
-      <TextField fx:id="performanceField" alignment="TOP_LEFT" layoutX="442.0" layoutY="418.0" prefHeight="70.0" prefWidth="242.0" />
-      <DatePicker fx:id="dobPicker" layoutX="442.0" layoutY="367.0" prefHeight="27.0" prefWidth="239.0" />
       <DatePicker fx:id="contractDayPicker" layoutX="873.0" layoutY="315.0" prefHeight="27.0" prefWidth="242.0" />
+      <Label layoutX="735.0" layoutY="365.0" prefHeight="23.0" prefWidth="138.0" text="약정:" />
       <DatePicker fx:id="contractPeriodPicker" layoutX="873.0" layoutY="364.0" prefHeight="27.0" prefWidth="242.0" />
+      <Label layoutX="304.0" layoutY="462.0" prefHeight="23.0" prefWidth="138.0" text="진행카테고리:" />
+      <TextField fx:id="performanceField" alignment="TOP_LEFT" layoutX="442.0" layoutY="466.0" prefHeight="70.0" prefWidth="242.0" />
+      <Label layoutX="735.0" layoutY="413.0" prefHeight="23.0" prefWidth="138.0" text="메모:" />
+      <TextField fx:id="memoField" alignment="TOP_LEFT" layoutX="873.0" layoutY="413.0" prefHeight="261.0" prefWidth="305.0" />
       <Button layoutX="607.0" layoutY="686.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="58.0" prefWidth="155.0" style="-fx-background-color: #90EE99;" text="저장" AnchorPane.leftAnchor="607.0" AnchorPane.rightAnchor="518.0" />
     </children>
 </AnchorPane>

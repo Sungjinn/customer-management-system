@@ -2,6 +2,7 @@ package app.controllers;
 
 import app.DB.DbConnet;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -27,6 +28,9 @@ public class EditCustomerController implements Initializable {
 
     @FXML
     private TextField companyNameTF;
+
+    @FXML
+    private TextField phoneTF;
 
     @FXML
     private TextField addressTF;
@@ -64,7 +68,7 @@ public class EditCustomerController implements Initializable {
     @FXML
     void editBtn(MouseEvent event) {
         Connection connection = DbConnet.getInstance().getConnection();
-        String name = nameTF.getText(), companyName = companyNameTF.getText(), address = addressTF.getText(), DOB = dobPickerTF.getValue().toString(), cardNumber = cardNumberTF.getText(),
+        String name = nameTF.getText(), companyName = companyNameTF.getText(), phone = phoneTF.getText(), address = addressTF.getText(), DOB = dobPickerTF.getValue().toString(), cardNumber = cardNumberTF.getText(),
                 cardValidity = cardValidityTF.getText(), contractDay = contractDayPickerTF.getValue().toString(), contractPeriod = contractPeriodPickerTF.getValue().toString(), performance = performanceTF.getText(),
                 memo = memoTF.getText();
 
@@ -76,7 +80,7 @@ public class EditCustomerController implements Initializable {
         if (answer.get() == ButtonType.OK) {
             try {
                 Statement statement = connection.createStatement();
-                statement.execute("update customer set id = '"+id+"', 이름 = '"+name+"', 상호 = '"+companyName+"', 주소 = '"+address+"',생년월일 = '"+DOB+"',카드번호 = '"+cardNumber+"', " +
+                statement.execute("update customer set id = '"+id+"', 이름 = '"+name+"', 상호 = '"+companyName+"', 전화번호 = '"+phone+"',주소 = '"+address+"',생년월일 = '"+DOB+"',카드번호 = '"+cardNumber+"', " +
                         "카드유효번호 = '"+cardValidity+"', 계약날짜 = '"+contractDay+"', 약정 = '"+contractPeriod+"', 진행카테고리 = '"+performance+"', 메모 = '"+memo+"' where id = '"+id+"'");
                 JOptionPane.showMessageDialog(null,"수정되었습니다.");
 
@@ -91,10 +95,11 @@ public class EditCustomerController implements Initializable {
         }
     }
 
-    public void setData(String nameTF, String companyNameTF, String addressTF, String dobPickerTF, String cardNumberTF, String cardValidityTF, String contractDayPickerTF,
+    public void setData(String nameTF, String companyNameTF, String phoneTF,String addressTF, String dobPickerTF, String cardNumberTF, String cardValidityTF, String contractDayPickerTF,
                         String contractPeriodPickerTF, String performanceTF, String memoTF, String id){
         this.nameTF.setText(nameTF);
         this.companyNameTF.setText(companyNameTF);
+        this.phoneTF.setText(phoneTF);
         this.addressTF.setText(addressTF);
         this.dobPickerTF.setValue(LocalDate.parse(dobPickerTF));
         this.cardNumberTF.setText(cardNumberTF);

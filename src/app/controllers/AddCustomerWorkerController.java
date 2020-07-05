@@ -10,15 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
-
-import java.io.IOException;
-import java.net.URL;
-
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
+import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -27,8 +25,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-
-public class AddCustomerController implements Initializable {
+public class AddCustomerWorkerController implements Initializable {
 
     @FXML
     private TextField nameTextField;
@@ -43,7 +40,7 @@ public class AddCustomerController implements Initializable {
     private TextField addressTextField;
 
     @FXML
-    private TextField memoField;
+    private DatePicker dobPicker;
 
     @FXML
     private TextField cardNumberField;
@@ -52,21 +49,21 @@ public class AddCustomerController implements Initializable {
     private TextField cardValidityField;
 
     @FXML
-    private TextField performanceField;
-
-    @FXML
-    private DatePicker dobPicker;
-
-    @FXML
     private DatePicker contractDayPicker;
 
     @FXML
     private DatePicker contractPeriodPicker;
 
     @FXML
+    private TextField performanceField;
+
+    @FXML
+    private TextField memoField;
+
+    @FXML
     void addCustomerButtonInAdd(MouseEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/app/views/add_customer.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/app/views/add_customer_worker.fxml"));
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -78,7 +75,7 @@ public class AddCustomerController implements Initializable {
     @FXML
     void homeButtonInAdd(MouseEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/app/views/customer_list.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/app/views/customer_listForWorker.fxml"));
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -129,7 +126,6 @@ public class AddCustomerController implements Initializable {
         }
     }
 
-
     private void dayFormatting(DatePicker datePicker) {
         datePicker.setConverter(
                 new StringConverter<LocalDate>() {
@@ -154,6 +150,5 @@ public class AddCustomerController implements Initializable {
         dayFormatting(dobPicker);
         dayFormatting(contractDayPicker);
         dayFormatting(contractPeriodPicker);
-
     }
 }

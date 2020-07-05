@@ -27,8 +27,8 @@ public class LoginController implements Initializable {
 
     @FXML
     void login(MouseEvent event) {
-        String login_id = "admin", login_password = "1234";
-
+        String login_id = "parkscgood", login_password = "tjdcks0517";
+        String login_id1 = "ebone0910", login_password1 = "1234";
         String id = tf_id.getText();
         String password = tf__password.getText();
 
@@ -39,6 +39,17 @@ public class LoginController implements Initializable {
                     Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.setScene(new Scene(root));
+                    stage.centerOnScreen();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else if(login_id1.equals(id) && login_password1.equals(password)){
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("/app/views/customer_listForWorker.fxml"));
+                    Node node = (Node) event.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow();
+                    stage.setScene(new Scene(root));
+                    stage.centerOnScreen();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -53,8 +64,8 @@ public class LoginController implements Initializable {
     @FXML
     void enterKey(KeyEvent event) {
         if (event.getCode().equals(KeyCode.ENTER)){
-            String login_id = "admin", login_password = "1234";
-
+            String login_id = "parkscgood", login_password = "tjdcks0517";
+            String login_id1 = "ebone0910", login_password1 = "1234";
             String id = tf_id.getText();
             String password = tf__password.getText();
 
@@ -65,6 +76,17 @@ public class LoginController implements Initializable {
                         Node node = (Node) event.getSource();
                         Stage stage = (Stage) node.getScene().getWindow();
                         stage.setScene(new Scene(root));
+                        stage.centerOnScreen();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else if(login_id1.equals(id) && login_password1.equals(password)){
+                    try {
+                        Parent root = FXMLLoader.load(getClass().getResource("/app/views/customer_listForWorker.fxml"));
+                        Node node = (Node) event.getSource();
+                        Stage stage = (Stage) node.getScene().getWindow();
+                        stage.setScene(new Scene(root));
+                        stage.centerOnScreen();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

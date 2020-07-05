@@ -3,12 +3,13 @@ package app.models;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Customer {
-        String id, name,companyName,address,DOB,cardNumber,cardValidity,contractDay,contractPeriod,performance,note;
+        String id, name,companyName,address,DOB,cardNumber,cardValidity,contractDay,contractPeriod,performance,note,phone, hideCardnumber = "************", hideCardValidity = "****";
 
-    public Customer(String id, String name, String companyName, String address, String DOB, String cardNumber, String cardValidity, String contractDay, String contractPeriod, String performance, String note) {
+    public Customer(String id, String name, String companyName,String phone, String address, String DOB, String cardNumber, String cardValidity, String contractDay, String contractPeriod, String performance, String note) {
         this.id = id;
         this.name = name;
         this.companyName = companyName;
+        this.phone = phone;
         this.address = address;
         this.DOB = DOB;
         this.cardNumber = cardNumber;
@@ -17,6 +18,30 @@ public class Customer {
         this.contractPeriod = contractPeriod;
         this.performance = performance;
         this.note = note;
+    }
+
+    public String getHideCardValidity() {
+        return hideCardValidity;
+    }
+
+    public void setHideCardValidity(String hideCardValidity) {
+        this.hideCardValidity = hideCardValidity;
+    }
+
+    public String getHideCardnumber() {
+        return hideCardnumber;
+    }
+
+    public void setHideCardnumber(String hideCardnumber) {
+        this.hideCardnumber = hideCardnumber;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getId() {
@@ -106,4 +131,5 @@ public class Customer {
     public void setNote(String note) {
         this.note = note;
     }
+
 }

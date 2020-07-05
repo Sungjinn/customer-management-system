@@ -30,55 +30,66 @@ import java.sql.Statement;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class CustomerListController implements Initializable {
+public class CustomerListForWorkerController implements Initializable {
 
     @FXML
-    private TextField search;
+    private TextField search_worker;
 
     @FXML
-    private TableView<Customer> tbData;
+    private TableView<Customer> tbData_worker;
 
     @FXML
-    private TableColumn<Customer, String> id;
+    private TableColumn<Customer, String> id_worker;
 
     @FXML
-    private TableColumn<Customer, String> name;
+    private TableColumn<Customer, String> name_worker;
 
     @FXML
-    private TableColumn<Customer, String> companyName;
+    private TableColumn<Customer, String> companyName_worker;
 
     @FXML
-    private TableColumn<Customer, String> phone;
+    private TableColumn<Customer, String> phone_worker;
 
     @FXML
-    private TableColumn<Customer, String> address;
+    private TableColumn<Customer, String> address_worker;
 
     @FXML
-    private TableColumn<Customer, String> DOB;
+    private TableColumn<Customer, String> DOB_worker;
 
     @FXML
-    private TableColumn<Customer, String> cardNumber;
+    private TableColumn<Customer, String> cardNumber_worker;
 
     @FXML
-    private TableColumn<Customer, String> cardValidity;
+    private TableColumn<Customer, String> cardValidity_worker;
 
     @FXML
-    private TableColumn<Customer, String> contractDay;
+    private TableColumn<Customer, String> contractDay_worker;
 
     @FXML
-    private TableColumn<Customer, String> contractPeriod;
+    private TableColumn<Customer, String> contractPeriod_worker;
 
     @FXML
-    private TableColumn<Customer, String> performance;
+    private TableColumn<Customer, String> performance_worker;
 
     @FXML
-    private TableColumn<Customer, String> note;
+    private TableColumn<Customer, String> note_worker;
 
     private ObservableList<Customer> oblist;
+    @FXML
+    void addCustomerButton_worker(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/app/views/add_customer_worker.fxml"));
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
-    void handleCustomerDeleteOption(ActionEvent event) {
-        Customer selectedForDeletion = tbData.getSelectionModel().getSelectedItem();
+    void handleCustomerDeleteOption_worker(ActionEvent event) {
+        Customer selectedForDeletion = (Customer) tbData_worker.getSelectionModel().getSelectedItem();
         Connection connection = DbConnet.getInstance().getConnection();
         if (selectedForDeletion == null) {
             Alert alert = new Alert(Alert.AlertType.NONE, "\n\n고객정보를 선택해주세요.", ButtonType.OK);
@@ -107,7 +118,6 @@ public class CustomerListController implements Initializable {
                 confirm.setTitle("고객 정보 지우기");
                 confirm.show();
                 oblist.remove(selectedForDeletion);
-                setTableData();
             }
             alert.close();
         } else {
@@ -116,8 +126,8 @@ public class CustomerListController implements Initializable {
     }
 
     @FXML
-    void handleCustomerEditOption(ActionEvent event) {
-        Customer selectedForEdition = tbData.getSelectionModel().getSelectedItem();
+    void handleCustomerEditOption_worker(ActionEvent event) {
+        Customer selectedForEdition = tbData_worker.getSelectionModel().getSelectedItem();
         if (selectedForEdition == null) {
             Alert alert = new Alert(Alert.AlertType.NONE, "\n\n고객정보를 선택해주세요.", ButtonType.OK);
             alert.getDialogPane().setMinHeight(Region.USE_COMPUTED_SIZE);
@@ -125,11 +135,11 @@ public class CustomerListController implements Initializable {
         } else {
             try {
                 Stage popup = new Stage();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/views/edit_customer.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/views/edit_customer_worker.fxml"));
                 Parent root = loader.load();
 
-                EditCustomerController editCustomerController = loader.getController();
-                editCustomerController.setData(selectedForEdition.getName(), selectedForEdition.getCompanyName(), selectedForEdition.getPhone(), selectedForEdition.getAddress(), selectedForEdition.getDOB(),
+                EditCustomerWorkerController editCustomerWorkerController = loader.getController();
+                editCustomerWorkerController.setDataWorker(selectedForEdition.getName(),selectedForEdition.getCompanyName(),selectedForEdition.getPhone(),selectedForEdition.getAddress(),selectedForEdition.getDOB(),
                         selectedForEdition.getCardNumber(), selectedForEdition.getCardValidity(), selectedForEdition.getContractDay(), selectedForEdition.getContractPeriod(),
                         selectedForEdition.getPerformance(), selectedForEdition.getNote(), selectedForEdition.getId());
 
@@ -145,9 +155,9 @@ public class CustomerListController implements Initializable {
     }
 
     @FXML
-    void addCustomerButton(MouseEvent event) {
+    void homeButton_worker(MouseEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/app/views/add_customer.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/app/views/customer_listForWorker.fxml"));
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -155,33 +165,21 @@ public class CustomerListController implements Initializable {
             e.printStackTrace();
         }
     }
-
-    @FXML
-    void homeButton(MouseEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/app/views/customer_list.fxml"));
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            stage.setScene(new Scene(root));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    void setTableData(){
+    void setTableDataForWorker(){
         oblist = FXCollections.observableArrayList();
 
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        companyName.setCellValueFactory(new PropertyValueFactory<>("companyName"));
-        phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        address.setCellValueFactory(new PropertyValueFactory<>("address"));
-        DOB.setCellValueFactory(new PropertyValueFactory<>("DOB"));
-        cardNumber.setCellValueFactory(new PropertyValueFactory<>("cardNumber"));
-        cardValidity.setCellValueFactory(new PropertyValueFactory<>("cardValidity"));
-        contractDay.setCellValueFactory(new PropertyValueFactory<>("contractDay"));
-        contractPeriod.setCellValueFactory(new PropertyValueFactory<>("contractPeriod"));
-        performance.setCellValueFactory(new PropertyValueFactory<>("performance"));
-        note.setCellValueFactory(new PropertyValueFactory<>("note"));
+        id_worker.setCellValueFactory(new PropertyValueFactory<>("id"));
+        name_worker.setCellValueFactory(new PropertyValueFactory<>("name"));
+        companyName_worker.setCellValueFactory(new PropertyValueFactory<>("companyName"));
+        phone_worker.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        address_worker.setCellValueFactory(new PropertyValueFactory<>("address"));
+        DOB_worker.setCellValueFactory(new PropertyValueFactory<>("DOB"));
+        cardNumber_worker.setCellValueFactory(new PropertyValueFactory<>("hideCardnumber"));
+        cardValidity_worker.setCellValueFactory(new PropertyValueFactory<>("hideCardValidity"));
+        contractDay_worker.setCellValueFactory(new PropertyValueFactory<>("contractDay"));
+        contractPeriod_worker.setCellValueFactory(new PropertyValueFactory<>("contractPeriod"));
+        performance_worker.setCellValueFactory(new PropertyValueFactory<>("performance"));
+        note_worker.setCellValueFactory(new PropertyValueFactory<>("note"));
 
         try {
             Connection connection = DbConnet.getInstance().getConnection();
@@ -189,11 +187,13 @@ public class CustomerListController implements Initializable {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM customer");
 
             while (resultSet.next()) {
-                oblist.add(new Customer(resultSet.getString("id"), resultSet.getString("이름"), resultSet.getString("상호"), resultSet.getString("전화번호"),
+                Customer customer = new Customer(resultSet.getString("id"), resultSet.getString("이름"), resultSet.getString("상호"),resultSet.getString("전화번호"),
                         resultSet.getString("주소"), resultSet.getString("생년월일"), resultSet.getString("카드번호"), resultSet.getString("카드유효번호"),
-                        resultSet.getString("계약날짜"), resultSet.getString("약정"), resultSet.getString("진행카테고리"), resultSet.getString("메모")));
+                        resultSet.getString("계약날짜"), resultSet.getString("약정"), resultSet.getString("진행카테고리"), resultSet.getString("메모"));
+                oblist.add(customer);
             }
-            tbData.setItems(oblist);
+
+            tbData_worker.setItems(oblist);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -201,21 +201,21 @@ public class CustomerListController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setTableData();
+        setTableDataForWorker();
 //        oblist = FXCollections.observableArrayList();
 //
-//        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-//        name.setCellValueFactory(new PropertyValueFactory<>("name"));
-//        companyName.setCellValueFactory(new PropertyValueFactory<>("companyName"));
-//        phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-//        address.setCellValueFactory(new PropertyValueFactory<>("address"));
-//        DOB.setCellValueFactory(new PropertyValueFactory<>("DOB"));
-//        cardNumber.setCellValueFactory(new PropertyValueFactory<>("cardNumber"));
-//        cardValidity.setCellValueFactory(new PropertyValueFactory<>("cardValidity"));
-//        contractDay.setCellValueFactory(new PropertyValueFactory<>("contractDay"));
-//        contractPeriod.setCellValueFactory(new PropertyValueFactory<>("contractPeriod"));
-//        performance.setCellValueFactory(new PropertyValueFactory<>("performance"));
-//        note.setCellValueFactory(new PropertyValueFactory<>("note"));
+//        id_worker.setCellValueFactory(new PropertyValueFactory<>("id"));
+//        name_worker.setCellValueFactory(new PropertyValueFactory<>("name"));
+//        companyName_worker.setCellValueFactory(new PropertyValueFactory<>("companyName"));
+//        phone_worker.setCellValueFactory(new PropertyValueFactory<>("phone"));
+//        address_worker.setCellValueFactory(new PropertyValueFactory<>("address"));
+//        DOB_worker.setCellValueFactory(new PropertyValueFactory<>("DOB"));
+//        cardNumber_worker.setCellValueFactory(new PropertyValueFactory<>("hideCardnumber"));
+//        cardValidity_worker.setCellValueFactory(new PropertyValueFactory<>("hideCardValidity"));
+//        contractDay_worker.setCellValueFactory(new PropertyValueFactory<>("contractDay"));
+//        contractPeriod_worker.setCellValueFactory(new PropertyValueFactory<>("contractPeriod"));
+//        performance_worker.setCellValueFactory(new PropertyValueFactory<>("performance"));
+//        note_worker.setCellValueFactory(new PropertyValueFactory<>("note"));
 //
 //        try {
 //            Connection connection = DbConnet.getInstance().getConnection();
@@ -223,19 +223,21 @@ public class CustomerListController implements Initializable {
 //            ResultSet resultSet = statement.executeQuery("SELECT * FROM customer");
 //
 //            while (resultSet.next()) {
-//                oblist.add(new Customer(resultSet.getString("id"), resultSet.getString("이름"), resultSet.getString("상호"), resultSet.getString("전화번호"),
+//                Customer customer = new Customer(resultSet.getString("id"), resultSet.getString("이름"), resultSet.getString("상호"),resultSet.getString("전화번호"),
 //                        resultSet.getString("주소"), resultSet.getString("생년월일"), resultSet.getString("카드번호"), resultSet.getString("카드유효번호"),
-//                        resultSet.getString("계약날짜"), resultSet.getString("약정"), resultSet.getString("진행카테고리"), resultSet.getString("메모")));
+//                        resultSet.getString("계약날짜"), resultSet.getString("약정"), resultSet.getString("진행카테고리"), resultSet.getString("메모"));
+//                oblist.add(customer);
 //            }
-//            tbData.setItems(oblist);
+//
+//            tbData_worker.setItems(oblist);
 //        } catch (SQLException e) {
 //            e.printStackTrace();
 //        }
 
-        search.setFocusTraversable(false);
+        search_worker.setFocusTraversable(false);
 
         FilteredList<Customer> filteredList = new FilteredList<>(oblist, ㄱ -> true);
-        search.textProperty().addListener((observable, oldValue, newValue) -> {
+        search_worker.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredList.setPredicate(customer -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
@@ -247,7 +249,7 @@ public class CustomerListController implements Initializable {
                     return true;
                 } else if (customer.getCompanyName().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
-                } else if (customer.getPhone().toLowerCase().contains(lowerCaseFilter)) {
+                }else if(customer.getPhone().toLowerCase().contains(lowerCaseFilter)){
                     return true;
                 }
                 return false;
@@ -255,7 +257,7 @@ public class CustomerListController implements Initializable {
         });
 
         SortedList<Customer> sortedList = new SortedList<>(filteredList);
-        sortedList.comparatorProperty().bind(tbData.comparatorProperty());
-        tbData.setItems(sortedList);
+        sortedList.comparatorProperty().bind(tbData_worker.comparatorProperty());
+        tbData_worker.setItems(sortedList);
     }
 }
