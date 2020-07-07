@@ -2,12 +2,15 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
@@ -16,19 +19,25 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1290.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.CustomerListController">
     <children>
-        <Pane prefHeight="139.0" prefWidth="1102.0" style="-fx-background-color: #50b8e7#50b8e7;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Pane prefHeight="139.0" prefWidth="1102.0" style="-fx-background-color: #1e8bb2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label layoutX="243.0" layoutY="14.0" text="이본커뮤니케이션즈" textFill="WHITE">
+                <Label layoutX="238.0" layoutY="14.0" text="이본커뮤니케이션즈" textFill="WHITE">
                     <font>
                         <Font size="48.0" />
                     </font>
                 </Label>
-                <Label layoutX="243.0" layoutY="97.0" text="고객관리" textFill="WHITE">
+                <Label layoutX="260.0" layoutY="90.0" text="고객관리" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font>
                 </Label>
-            <TextField fx:id="search" layoutX="965.0" layoutY="90.0" prefHeight="33.0" prefWidth="306.0" promptText="이름/상호/전화번호" />
+            <TextField fx:id="search" layoutX="772.0" layoutY="93.0" prefHeight="33.0" prefWidth="306.0" promptText="이름/상호/전화번호" />
+            <ImageView fitHeight="143.0" fitWidth="198.0" layoutY="-4.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/이본커뮤니케이션즈%20로고1.JPG" />
+               </image>
+            </ImageView>
+            <ComboBox fx:id="searchBox" layoutX="1114.0" layoutY="91.0" prefHeight="33.0" prefWidth="162.0" promptText="월 자동결제일로 검색" />
             </children>
         </Pane>
         <TableView fx:id="tbData" layoutX="171.0" layoutY="140.0" prefHeight="661.0" prefWidth="1119.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0">
@@ -42,7 +51,7 @@
             <TableColumn fx:id="cardNumber" prefWidth="75.0" text="카드번호" />
             <TableColumn fx:id="cardValidity" prefWidth="75.0" text="카드유효번호" />
             <TableColumn fx:id="contractDay" prefWidth="75.0" text="계약날짜" />
-            <TableColumn fx:id="contractPeriod" prefWidth="75.0" text="약정" />
+            <TableColumn fx:id="contractPeriod" prefWidth="75.0" text="월 자동결제" />
             <TableColumn fx:id="performance" prefWidth="75.0" text="진행카테고리" />
             <TableColumn fx:id="note" prefWidth="75.0" text="메모" />
             </columns>
@@ -64,7 +73,7 @@
         <Pane layoutX="147.0" layoutY="159.0" prefHeight="33.0" prefWidth="321.0" />
       <StackPane layoutX="10.0" layoutY="147.0" prefHeight="587.0" prefWidth="162.0">
          <children>
-            <VBox alignment="BOTTOM_CENTER" prefHeight="425.0" prefWidth="162.0">
+            <VBox alignment="BOTTOM_CENTER" prefHeight="519.0" prefWidth="104.0">
                <children>
                   <Button mnemonicParsing="false" onMouseClicked="#homeButton" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #50b8e7#50b8e7;" text="홈" textFill="WHITE">
                      <VBox.margin>

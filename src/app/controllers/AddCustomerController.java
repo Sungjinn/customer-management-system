@@ -1,20 +1,19 @@
 package app.controllers;
 
 import app.DB.DbConnet;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
 
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
@@ -43,7 +42,7 @@ public class AddCustomerController implements Initializable {
     private TextField addressTextField;
 
     @FXML
-    private TextField memoField;
+    private TextArea memoArea;
 
     @FXML
     private TextField cardNumberField;
@@ -55,13 +54,16 @@ public class AddCustomerController implements Initializable {
     private TextField performanceField;
 
     @FXML
-    private DatePicker dobPicker;
+    private TextField DOBField;
 
     @FXML
     private DatePicker contractDayPicker;
 
     @FXML
-    private DatePicker contractPeriodPicker;
+    private ComboBox<String> autopaymentBox;
+
+    ObservableList<String> list = FXCollections.observableArrayList(" ","1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", "11일", "12일", "13일", "14일", "15일", "16일", "17일",
+            "18일", "19일", "20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", "29일", "30일", "말일");
 
     @FXML
     void addCustomerButtonInAdd(MouseEvent event) {
@@ -90,15 +92,15 @@ public class AddCustomerController implements Initializable {
     @FXML
     void save(MouseEvent event) {
         Connection connection = DbConnet.getInstance().getConnection();
-        if (dobPicker.getValue() == null || contractDayPicker.getValue() == null || contractPeriodPicker.getValue() == null) {
+        if (contractDayPicker.getValue() == null || autopaymentBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("고객 정보 추가하기");
-            alert.setContentText("고객의 생년월일, 계약날짜, 약정 날짜를 선택해주세요.");
+            alert.setContentText("계약날짜 및 월 자동결제 날짜를 선택해주세요.");
             alert.show();
         } else {
-            String name = nameTextField.getText(),companyName = companyNameField.getText(),phone = phoneTextField.getText(),address = addressTextField.getText(), DOB = dobPicker.getValue().toString(), cardNumber = cardNumberField.getText(),
-                    cardValidity = cardValidityField.getText(), contractDay = contractDayPicker.getValue().toString(), contractPeriod = contractPeriodPicker.getValue().toString(), performance = performanceField.getText(),
-                    memo = memoField.getText();
+            String name = nameTextField.getText(),companyName = companyNameField.getText(),phone = phoneTextField.getText(),address = addressTextField.getText(), DOB = DOBField.getText(),
+                    cardNumber = cardNumberField.getText(), cardValidity = cardValidityField.getText(), contractDay = contractDayPicker.getValue().toString(),
+                    contractPeriod = autopaymentBox.getSelectionModel().getSelectedItem(), performance = performanceField.getText(), memo = memoArea.getText();
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("고객 정보 추가하기");
@@ -117,11 +119,12 @@ public class AddCustomerController implements Initializable {
                     addressTextField.setText("");
                     cardNumberField.setText("");
                     cardValidityField.setText("");
-                    memoField.setText("");
+                    memoArea.setText("");
                     performanceField.setText("");
-                    dobPicker.setValue(null);
+                    DOBField.setText("");
                     contractDayPicker.setValue(null);
-                    contractPeriodPicker.setValue(null);
+                    autopaymentBox.setValue(null);
+//                    contractPeriodPicker.setValue(null);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -151,9 +154,7 @@ public class AddCustomerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        dayFormatting(dobPicker);
+        autopaymentBox.setItems(list);
         dayFormatting(contractDayPicker);
-        dayFormatting(contractPeriodPicker);
-
     }
 }

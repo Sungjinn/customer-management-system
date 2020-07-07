@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="customer-management-system:jar">
+    <output-path>$PROJECT_DIR$/../고객관리시스템</output-path>
+    <root id="archive" name="customer-management-system.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../고객관리시스템/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="customer-management-system" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-8.0.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/sqlite-jdbc-3.7.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

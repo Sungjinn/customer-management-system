@@ -16,12 +16,11 @@ public class DbConnet {
     }
 
     public Connection getConnection() {
-//        String connect_string = "jdbc:sqlite:customer-management.db";
+        String connectionString = "jdbc:mysql://localhost:3306/server?user=root&password=Lastcall#8613&useUnicode=true&characterEncoding=UTF-8";
         Connection connection = null;
         try {
-//            Class.forName("org.sqlite.JDBC");
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/server?serverTimezone=UTC","root","Lastcall#8613");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/server?serverTimezone=UTC&autoReconnect=true  ","userId","Lastcall#8613");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"데이터베이스 접속 오류" + e.getMessage());
         }
@@ -42,9 +41,5 @@ public class DbConnet {
             e.printStackTrace();
         }
         return false;
-    }
-
-    public void updateKey(){
-
     }
 }

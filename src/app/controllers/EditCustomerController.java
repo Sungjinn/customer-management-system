@@ -1,14 +1,13 @@
 package app.controllers;
 
 import app.DB.DbConnet;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -36,7 +35,7 @@ public class EditCustomerController implements Initializable {
     private TextField addressTF;
 
     @FXML
-    private TextField memoTF;
+    private TextArea memoAR;
 
     @FXML
     private TextField cardNumberTF;
@@ -48,15 +47,18 @@ public class EditCustomerController implements Initializable {
     private TextField performanceTF;
 
     @FXML
-    private DatePicker dobPickerTF;
+    private TextField DOBTF;
 
     @FXML
     private DatePicker contractDayPickerTF;
 
     @FXML
-    private DatePicker contractPeriodPickerTF;
+    private ComboBox<String> autoPayment;
 
     private String id;
+
+    ObservableList<String> list = FXCollections.observableArrayList(" ", "1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", "11일", "12일", "13일", "14일", "15일", "16일", "17일",
+            "18일", "19일", "20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", "29일", "30일", "말일");
 
     @FXML
     void cancelBtn(MouseEvent event) {
@@ -68,9 +70,9 @@ public class EditCustomerController implements Initializable {
     @FXML
     void editBtn(MouseEvent event) {
         Connection connection = DbConnet.getInstance().getConnection();
-        String name = nameTF.getText(), companyName = companyNameTF.getText(), phone = phoneTF.getText(), address = addressTF.getText(), DOB = dobPickerTF.getValue().toString(), cardNumber = cardNumberTF.getText(),
-                cardValidity = cardValidityTF.getText(), contractDay = contractDayPickerTF.getValue().toString(), contractPeriod = contractPeriodPickerTF.getValue().toString(), performance = performanceTF.getText(),
-                memo = memoTF.getText();
+        String name = nameTF.getText(), companyName = companyNameTF.getText(), phone = phoneTF.getText(), address = addressTF.getText(), DOB = DOBTF.getText(), cardNumber = cardNumberTF.getText(),
+                cardValidity = cardValidityTF.getText(), contractDay = contractDayPickerTF.getValue().toString(), contractPeriod = autoPayment.getSelectionModel().getSelectedItem(),
+                performance = performanceTF.getText(), memo = memoAR.getText();
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("고객 정보 수정");
@@ -95,24 +97,24 @@ public class EditCustomerController implements Initializable {
         }
     }
 
-    public void setData(String nameTF, String companyNameTF, String phoneTF,String addressTF, String dobPickerTF, String cardNumberTF, String cardValidityTF, String contractDayPickerTF,
-                        String contractPeriodPickerTF, String performanceTF, String memoTF, String id){
+    public void setData(String nameTF, String companyNameTF, String phoneTF,String addressTF, String dobTF, String cardNumberTF, String cardValidityTF, String contractDayPickerTF,
+                        String contractPeriodTF, String performanceTF, String memoAR, String id){
         this.nameTF.setText(nameTF);
         this.companyNameTF.setText(companyNameTF);
         this.phoneTF.setText(phoneTF);
         this.addressTF.setText(addressTF);
-        this.dobPickerTF.setValue(LocalDate.parse(dobPickerTF));
+        this.DOBTF.setText(dobTF);
         this.cardNumberTF.setText(cardNumberTF);
         this.cardValidityTF.setText(cardValidityTF);
         this.contractDayPickerTF.setValue(LocalDate.parse(contractDayPickerTF));
-        this.contractPeriodPickerTF.setValue(LocalDate.parse(contractPeriodPickerTF));
+        this.autoPayment.setValue(contractPeriodTF);
         this.performanceTF.setText(performanceTF);
-        this.memoTF.setText(memoTF);
+        this.memoAR.setText(memoAR);
         this.id = id;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        autoPayment.setItems(list);
     }
 }

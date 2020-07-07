@@ -36,6 +36,9 @@ public class CustomerListController implements Initializable {
     private TextField search;
 
     @FXML
+    private ComboBox<String> searchBox;
+
+    @FXML
     private TableView<Customer> tbData;
 
     @FXML
@@ -75,6 +78,10 @@ public class CustomerListController implements Initializable {
     private TableColumn<Customer, String> note;
 
     private ObservableList<Customer> oblist;
+
+    ObservableList<String> list = FXCollections.observableArrayList("월 자동결제일로 검색", "1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일",
+            "9일", "10일", "11일", "12일", "13일", "14일", "15일", "16일", "17일", "18일", "19일", "20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", "29일", "30일", "말일");
+
 
     @FXML
     void handleCustomerDeleteOption(ActionEvent event) {
@@ -202,39 +209,27 @@ public class CustomerListController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setTableData();
-//        oblist = FXCollections.observableArrayList();
-//
-//        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-//        name.setCellValueFactory(new PropertyValueFactory<>("name"));
-//        companyName.setCellValueFactory(new PropertyValueFactory<>("companyName"));
-//        phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-//        address.setCellValueFactory(new PropertyValueFactory<>("address"));
-//        DOB.setCellValueFactory(new PropertyValueFactory<>("DOB"));
-//        cardNumber.setCellValueFactory(new PropertyValueFactory<>("cardNumber"));
-//        cardValidity.setCellValueFactory(new PropertyValueFactory<>("cardValidity"));
-//        contractDay.setCellValueFactory(new PropertyValueFactory<>("contractDay"));
-//        contractPeriod.setCellValueFactory(new PropertyValueFactory<>("contractPeriod"));
-//        performance.setCellValueFactory(new PropertyValueFactory<>("performance"));
-//        note.setCellValueFactory(new PropertyValueFactory<>("note"));
-//
-//        try {
-//            Connection connection = DbConnet.getInstance().getConnection();
-//            Statement statement = connection.createStatement();
-//            ResultSet resultSet = statement.executeQuery("SELECT * FROM customer");
-//
-//            while (resultSet.next()) {
-//                oblist.add(new Customer(resultSet.getString("id"), resultSet.getString("이름"), resultSet.getString("상호"), resultSet.getString("전화번호"),
-//                        resultSet.getString("주소"), resultSet.getString("생년월일"), resultSet.getString("카드번호"), resultSet.getString("카드유효번호"),
-//                        resultSet.getString("계약날짜"), resultSet.getString("약정"), resultSet.getString("진행카테고리"), resultSet.getString("메모")));
-//            }
-//            tbData.setItems(oblist);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        searchBox.setItems(list);
 
         search.setFocusTraversable(false);
+        searchBox.setFocusTraversable(false);
 
         FilteredList<Customer> filteredList = new FilteredList<>(oblist, ㄱ -> true);
+
+        searchBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
+            filteredList.setPredicate(customer -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                if(customer.getContractPeriod().contains(newValue)){
+                    return true;
+                }else if(newValue.equals(searchBox.getItems().get(0))){
+                    return true;
+                }
+                return false;
+            });
+        });
+
         search.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredList.setPredicate(customer -> {
                 if (newValue == null || newValue.isEmpty()) {

@@ -4,10 +4,7 @@ import app.DB.DbConnet;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -34,19 +31,20 @@ public class EditCustomerWorkerController implements Initializable {
     private TextField addressTF_worker;
 
     @FXML
-    private DatePicker dobPickerTF_worker;
-
-    @FXML
     private DatePicker contractDayPickerTF_worker;
-
-    @FXML
-    private DatePicker contractPeriodPickerTF_worker;
 
     @FXML
     private TextField performanceTF_worker;
 
     @FXML
-    private TextField memoTF_worker;
+    private TextField DOBTF_worker;
+
+    @FXML
+    private ComboBox<String> autoPayment_worker;
+
+    @FXML
+    private TextArea memoAR_worker;
+
 
     private String id;
 
@@ -63,9 +61,9 @@ public class EditCustomerWorkerController implements Initializable {
     @FXML
     void editBtn(MouseEvent event) {
         Connection connection = DbConnet.getInstance().getConnection();
-        String name = nameTF_worker.getText(), companyName = companyNameTF_worker.getText(), phone = phoneTF_worker.getText(), address = addressTF_worker.getText(), DOB = dobPickerTF_worker.getValue().toString(),
+        String name = nameTF_worker.getText(), companyName = companyNameTF_worker.getText(), phone = phoneTF_worker.getText(), address = addressTF_worker.getText(), DOB = DOBTF_worker.getText(),
                 cardNumber = cardNumber_worker, cardValidity = cardValidity_worker, contractDay = contractDayPickerTF_worker.getValue().toString(),
-                contractPeriod = contractPeriodPickerTF_worker.getValue().toString(), performance = performanceTF_worker.getText(), memo = memoTF_worker.getText();
+                contractPeriod = autoPayment_worker.getSelectionModel().getSelectedItem(), performance = performanceTF_worker.getText(), memo = memoAR_worker.getText();
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("고객 정보 수정");
@@ -89,19 +87,19 @@ public class EditCustomerWorkerController implements Initializable {
         }
     }
 
-    public void setDataWorker(String nameTF, String companyNameTF, String phoneTF,String addressTF, String dobPickerTF, String cardNumberTF, String cardValidityTF, String contractDayPickerTF,
-                        String contractPeriodPickerTF, String performanceTF, String memoTF, String id){
+    public void setDataWorker(String nameTF, String companyNameTF, String phoneTF,String addressTF, String dobTF, String cardNumberTF, String cardValidityTF, String contractDayPickerTF,
+                        String contractPeriodTF, String performanceTF, String memoAR, String id){
         this.nameTF_worker.setText(nameTF);
         this.companyNameTF_worker.setText(companyNameTF);
         this.phoneTF_worker.setText(phoneTF);
         this.addressTF_worker.setText(addressTF);
-        this.dobPickerTF_worker.setValue(LocalDate.parse(dobPickerTF));
+        this.DOBTF_worker.setText(dobTF);
         this.cardNumber_worker = cardNumberTF;
         this.cardValidity_worker = cardValidityTF;
         this.contractDayPickerTF_worker.setValue(LocalDate.parse(contractDayPickerTF));
-        this.contractPeriodPickerTF_worker.setValue(LocalDate.parse(contractPeriodPickerTF));
+        this.autoPayment_worker.setValue(contractPeriodTF);
         this.performanceTF_worker.setText(performanceTF);
-        this.memoTF_worker.setText(memoTF);
+        this.memoAR_worker.setText(memoAR);
         this.id = id;
     }
 
